@@ -24,8 +24,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOriginPatterns(
                         "http://localhost:*",
-                        "https://your-app.vercel.app",
-                        "https://your-app-*.vercel.app"
+                        "https://trellis-git-main-yogesh0244s-projects.vercel.app",
+                        "https://trellis-git-main-yogesh0244s-projects.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")

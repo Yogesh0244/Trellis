@@ -20,15 +20,15 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
-                .allowedOriginPatterns(
-                        "http://localhost:*",
-                        "https://trellis-git-main-yogesh0244s-projects.vercel.app",
-                        "https://trellis-git-main-yogesh0244s-projects.vercel.app"
-                )
-                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
-                .allowedHeaders("*")
-                .allowCredentials(true);
+public void addCorsMappings(CorsRegistry registry) {
+    registry.addMapping("/api/**")
+            .allowedOriginPatterns(
+                    "http://localhost:*",
+                    "https://trellis-*-yogesh0244s-projects.vercel.app",
+                    "https://trellis-git-main-yogesh0244s-projects.vercel.app"
+            )
+            .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(true);
     }
 }

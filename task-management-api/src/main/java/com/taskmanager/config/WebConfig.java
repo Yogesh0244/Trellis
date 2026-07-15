@@ -16,14 +16,17 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/api/**")
-                // Only these two stay public — /api/auth/me now correctly requires a token.
                 .excludePathPatterns("/api/auth/register", "/api/auth/login");
     }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOriginPatterns("http://localhost:*")
+                .allowedOriginPatterns(
+                        "http://localhost:*",
+                        "https://your-app.vercel.app",
+                        "https://your-app-*.vercel.app"
+                )
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
